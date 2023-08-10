@@ -11,7 +11,8 @@ def filter(input_file, output_file):
             if not consec(word) and len(word) >= 3:
                 outputfile.write(word + '\n')
 
-input_file = 'words.txt'
+input_file = 'spellingbee/words.txt'
+#or the path to words.txt on your machine
 output_file = 'dedup.txt'
 
 filter(input_file,output_file)

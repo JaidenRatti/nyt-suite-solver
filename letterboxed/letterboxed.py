@@ -35,6 +35,7 @@ def two_words(key_list,characters):
 
 def main():
     ar = argparse.ArgumentParser()
+    ar.add_argument('-f', '--words_file',required=True,help='input path to list of words')
     ar.add_argument('-l', '--left', required=True)
     ar.add_argument('-r','--right', required=True)
     ar.add_argument('-t','--top', required=True)
@@ -49,17 +50,20 @@ def main():
     
     combined = set(assoc.keys())
 
-    key_list = elim_invalid("dedup.txt", combined,assoc)
+    key_list = elim_invalid(args.words_file, combined,assoc)
     one_word_sols = one_word(key_list,combined)
     if not one_word_sols:
-        print("no one word solutions:")
+        print("no one word solutions")
     else:
-        print("one word solutions")
+        print("one word solutions:")
         print(one_word_sols)
     two_word_sols = two_words(key_list,combined)
-    print("\ntwo word solutions:")
-    for inner in two_word_sols:
-        print(inner[0], "->",inner[1])
+    if not two_word_sols:
+        print("no two word solutions")
+    else:
+        print("\ntwo word solutions:")
+        for inner in two_word_sols:
+            print(inner[0], "->",inner[1])
 
 if __name__ == "__main__":
     main()

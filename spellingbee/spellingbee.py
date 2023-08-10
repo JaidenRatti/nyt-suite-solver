@@ -47,4 +47,5 @@ def main():
     elapsed = end - start
     print(f"elapsed time: {elapsed:4f}s")
     
-main()
+if __name__ == "__main__":
+    main()

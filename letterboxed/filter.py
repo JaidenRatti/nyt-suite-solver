@@ -8,9 +8,8 @@ def filter(input_file, output_file):
     with open(input_file,'r') as inputfile, open(output_file, 'w') as outputfile:
         for line in inputfile:
             word = line.strip()
-            if not consec(word):
+            if not consec(word) and len(word) >= 3:
                 outputfile.write(word + '\n')
-
 
 input_file = 'words.txt'
 output_file = 'dedup.txt'

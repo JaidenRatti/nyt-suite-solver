@@ -39,15 +39,15 @@ elapsed time: 0.011486s
 
 Usage: 
 
-For a game with yse, rio, vfq, dut
+For a game with yse, rio, vfq, dut (clockwise starting at 12)
 
 `python letterboxed.py -f dedup.txt -l dut -r rio -t yse -b vfq`
 
 f -> path to dedup.txt
 
-l -> chars on left | 
-r -> chars on right | 
-t -> chars on top | 
+l -> chars on left, 
+r -> chars on right, 
+t -> chars on top, 
 b -> chars on bottom
 
 Sample Output:
